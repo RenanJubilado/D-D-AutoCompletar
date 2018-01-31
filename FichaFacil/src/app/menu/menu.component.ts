@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
       element.modificador = 0;
     });
   }
-  
+
   atributos: any = [
     {atributo: 'FOR', valor: 10},
     {atributo: 'DEX', valor: 10},
@@ -24,6 +24,12 @@ export class MenuComponent implements OnInit {
     {atributo: 'CAR', valor: 10}
   ];
   
+  botoes(btn: any, atr: any){
+    if(btn === '-'){atr.valor --}
+    else if(btn === '+'){atr.valor ++};
+    this.modCalc(atr);
+  }
+
   modCalc(atr: any){
     this.atributos.forEach(element => {
       if(atr.atributo == element.atributo)

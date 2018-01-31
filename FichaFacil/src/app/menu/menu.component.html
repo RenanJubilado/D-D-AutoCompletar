@@ -2,7 +2,7 @@
     <div class="row center atributos">
         <div class="col-4" *ngFor="let atributo of atributos">
             <h2>{{atributo.atributo}} : {{atributo.modificador}}</h2>
-            <p>-</p> <input [(ngModel)]="atributo.valor" type="number" maxlength="3" (change)="modCalc(atributo)"> <p>+</p>
+            <p (click)="botoes('-', atributo)">-</p> <input disabled="disabled" [(ngModel)]="atributo.valor" type="number" maxlength="3" (change)="modCalc(atributo)"> <p (click)="botoes('+', atributo)">+</p>
         </div>
     </div>
 
