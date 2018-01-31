@@ -1,0 +1,23 @@
+<div class="fixed-bottom">
+    <div class="row center atributos">
+        <div class="col-4" *ngFor="let atributo of atributos">
+            <h2>{{atributo.atributo}} : {{atributo.modificador}}</h2>
+            <p>-</p> <input [(ngModel)]="atributo.valor" type="number" maxlength="3" (change)="modCalc(atributo)"> <p>+</p>
+        </div>
+    </div>
+
+    <!--<div class="row center no-gutters menu">
+        <div class="col">
+            <p>Ficha</p>
+        </div>
+        <div class="col">
+            <p>Detalhes</p>
+        </div>
+        <div class="col">
+           <p>Outro</p>
+        </div>
+        <div class="col">
+           <p>Outro</p>
+        </div>
+    </div>-->
+</div>
