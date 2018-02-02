@@ -15,6 +15,7 @@ export class AtributosComponent implements OnInit {
     });
   }
 
+  opem: boolean = false;
   atributos: any = [
     {atributo: 'FOR', valor: 10},
     {atributo: 'DEX', valor: 10},
@@ -23,7 +24,6 @@ export class AtributosComponent implements OnInit {
     {atributo: 'SAB', valor: 10},
     {atributo: 'CAR', valor: 10}
   ];
-  opem: boolean = false;
   
   botoes(btn: any, atr: any){
     if(btn === '-'){atr.valor --}
