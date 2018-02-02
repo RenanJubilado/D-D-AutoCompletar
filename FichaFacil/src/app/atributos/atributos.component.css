@@ -1,0 +1,21 @@
+.atributos{
+    background-color: lightgrey;
+    text-align: center;
+}
+.atributos>div>p{
+    width: 33%;
+    font-weight: 600; font-size: 20px;
+    margin: 0px 0px 10px 0px; float: left;
+}
+.atributos>div>h2{
+    font-weight: 600; font-size: 22px;
+    margin: 10px 0px 0px 0px;
+}
+.titulo{
+    font-weight: 600;
+    background-color: black;
+    color: white;
+}
+.titulo>p{
+    margin: 10px 0px !important;
+}
