@@ -1,14 +1,14 @@
-<div class="row center">
-    <div class="col-10 titulo"><p>ATRIBUTOS</p></div>
-    <div class="col-2 titulo text-center" (click)="opem = !opem">
-        <p *ngIf="!opem"><i class="fa fa-angle-up"></i></p>
-        <p *ngIf="opem"><i class="fa fa-angle-down"></i></p>
+<div class="row center titulo"  (click)="opem = !opem">
+    <div class="col-10"><p>ATRIBUTOS</p></div>
+    <div class="col-2 text-center">
+        <p *ngIf="!opem"><i class="fa fa-angle-down"></i></p>
+        <p *ngIf="opem"><i class="fa fa-angle-up"></i></p>
     </div>
 </div>
 
 <div class="atributos row center" *ngIf="opem">
     <div class="col-4 text-center" *ngFor="let atributo of atributos">
-        <h2>{{atributo.atributo}} : {{atributo.modificador}}</h2>
+        <h2>{{atributo.abre}} : {{atributo.mod}}</h2>
         <p (click)="botoes('-', atributo)"><i class="fa fa-minus"></i></p>
         <p>{{atributo.valor}}</p>
         <p (click)="botoes('+', atributo)"><i class="fa fa-plus"></i></p>

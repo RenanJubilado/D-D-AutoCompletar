@@ -1,0 +1,52 @@
+<div class="row center titulo"  (click)="opem = !opem">
+    <div class="col-10"><p>PERSONAGEM</p></div>
+    <div class="col-2 text-center">
+        <p *ngIf="!opem"><i class="fa fa-angle-down"></i></p>
+        <p *ngIf="opem"><i class="fa fa-angle-up"></i></p>
+    </div>
+</div>
+<form class="example-form" *ngIf="opem">
+    <div class="row center">
+        <div class="col-6 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Personagem" [(ngModel)]="personagem.nome" name="nome">
+            </mat-form-field>
+        </div>
+        <div class="col-3 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="EXP" type="number" (change)="calcNivel(personagem.exp)" [(ngModel)]="personagem.exp" name="exp">
+            </mat-form-field>
+        </div>
+        <div class="col-3 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nivel" disabled [(ngModel)]="personagem.nivel" name="novel">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row center">
+        <div class="col-5 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Raça">
+            </mat-form-field>
+        </div>
+        <div class="col-7 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Sub-Raça">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row center">
+        <div class="col-6 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Tendencia">
+            </mat-form-field>
+        </div>
+        <div class="col-6 espaco-input">
+             <mat-form-field class="example-full-width">
+                <input matInput placeholder="Antecedente">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
