@@ -12,6 +12,18 @@ export class PersonagemComponent implements OnInit {
 
   ngOnInit() {
   }
+  tendencias: any = [
+        {nome: "Leal e Bom"},
+        {nome: "Neutro e Bom"},
+        {nome: "Caótico e Bom"},
+        {nome: "Leal e Neutro"},
+        {nome: "Neutro"},
+        {nome: "Caótico e Neutro"},
+        {nome: "Leal e Mau"},
+        {nome: "Neutro e Mau"},
+        {nome: "Caótico e Mau"}
+    ];
+
   nivel: any = [
         {exp: 0, level: 1, proficiencia: 2},
         {exp: 300, level: 2, proficiencia: 2},

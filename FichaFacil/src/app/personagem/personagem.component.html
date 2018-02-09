@@ -19,7 +19,7 @@
         </div>
         <div class="col-3 espaco-input">
              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Nivel" disabled [(ngModel)]="personagem.nivel" name="novel">
+                <input matInput placeholder="Nivel" disabled [(ngModel)]="personagem.nivel" name="nivel">
             </mat-form-field>
         </div>
     </div>
@@ -39,8 +39,12 @@
 
     <div class="row center">
         <div class="col-6 espaco-input">
-             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Tendencia">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Tendencia" [(ngModel)]="personagem.tendencia" name="tendencia">
+                    <mat-option *ngFor="let tendencia of tendencias" [value]="tendencia.nome">
+                    {{ tendencia.nome }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div class="col-6 espaco-input">

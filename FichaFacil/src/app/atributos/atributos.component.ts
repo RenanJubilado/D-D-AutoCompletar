@@ -46,6 +46,5 @@ export class AtributosComponent implements OnInit {
       if(atr.nome == element.nome)
       element.mod = Math.floor((atr.valor - 10)/2);
     });
-    console.log(this.atributos);
   };
 }

@@ -10,6 +10,7 @@ import { PersonagemComponent } from './personagem/personagem.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { PericiasComponent } from './pericias/pericias.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PericiasComponent } from './pericias/pericias.component';
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatSelectModule,
     HttpModule
   ],
   providers: [AppComponent],

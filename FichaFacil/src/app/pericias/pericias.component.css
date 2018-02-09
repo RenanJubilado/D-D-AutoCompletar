@@ -13,4 +13,12 @@
 .exibirDetalhe{
     background-color: #eee;
     width: 100%;
+    font-size: 16px;
+    font-style: italic;
+    text-align: justify;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.exibirDetalhe>p{
+    margin: 0px;
 }

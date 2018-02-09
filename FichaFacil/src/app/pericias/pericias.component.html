@@ -13,11 +13,12 @@
       <div class="col-7 text-left" *ngIf="exibirDetalhe == pericia.nome && pericia.detalhe != null" (click)="exibirDetalhe = ''"> <p><i class="fa fa-search-minus"></i> {{pericia.nome}}</p> </div>
       <div class="col-2 text-center"> <p>{{pericia.atributo}}</p> </div>
       <div class="col-2 text-center no-padding"> <p>{{pericia.valor}}</p> </div>
-      <div class="col-1 no-padding"> <input type="checkbox" [checked]="pericia.treinada"> </div>
+      <div class="col-1 no-padding"> <input type="checkbox" [checked]="pericia.treinada" (click)="setPericiaTreinada(pericia)"> </div>
       <div class="col-12" *ngIf="exibirDetalhe == pericia.nome && pericia.detalhe != null">
         <div class="exibirDetalhe">
           <p>{{pericia.detalhe}}</p>
         </div>
       </div>
   </div>
+  <h2 (click)="atualizarPericias()">Atualizar</h2>
 </div>

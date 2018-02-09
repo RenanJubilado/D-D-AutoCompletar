@@ -1,7 +1,7 @@
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import  PouchDB from 'pouchdb';
 
 @Component({
   selector: 'app-pericias',
@@ -10,28 +10,42 @@ import 'rxjs/add/operator/map'
 })
 
 export class PericiasComponent implements OnInit {
-url: any = 'http://localhost:5984/ficha_auto/pericias';
-  data: any = "";
   opem: boolean = true;
   pericias: any = [];
+  db: any = "";
 
-  constructor(private http: Http){}
-
-  ngOnInit() {
-    this.getPericias();
+  constructor(){
+    this.db = new PouchDB('http://localhost:5984/ficha_auto');
   }
 
-  receberPericias(data: any){
-    data.forEach(element =>{
-      this.pericias.push(element);
+  ngOnInit() {
+    this.listarPericias();
+  }
+
+  atualizarPericias(){
+    this.db.get('pericias').then((doc) => {
+      return this.db.put({_id: 'pericias', _rev: doc._rev, pericias: this.pericias});
+    }).then((response) => {
+      console.log(response);
+    }).catch((err) => {
+      console.log(err);
     });
   };
 
-  getPericias(){
-    this.http.get(this.url).map((res: Response) => res.json()).subscribe(data => {
-      this.data = data;
-      console.log(data.pericias);
-      this.receberPericias(this.data.pericias);
+  listarPericias(){
+    this.db.get('pericias').then((doc) => {
+      this.pericias = doc.pericias;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  setPericiaTreinada(pericia){
+    this.pericias.forEach(element => {
+      if(element.nome == pericia.nome){
+        let aux: boolean = pericia.treinada;
+        pericia.treinada = !aux;
+      }
     });
   };
   
