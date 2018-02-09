@@ -19,20 +19,34 @@
         </div>
         <div class="col-3 espaco-input">
              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Nivel" disabled [(ngModel)]="personagem.nivel" name="nivel">
+                <input *ngIf="personagem.nivel == null" matInput placeholder="Nivel" disabled name="nivel">
+                <input *ngIf="personagem.nivel != null" matInput placeholder="Nivel" disabled [value]="personagem.nivel.level" name="nivel">
             </mat-form-field>
         </div>
     </div>
 
     <div class="row center">
         <div class="col-5 espaco-input">
-             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Raça">
+            <mat-form-field class="example-full-width">
+                <mat-select placeholder="Raças" [(ngModel)]="personagem.racas" name="raca" (change)="subRacaChange()">
+                    <mat-option *ngFor="let raca of racas" [value]="raca">
+                        {{ raca.nome }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
         <div class="col-7 espaco-input">
              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Sub-Raça">
+                <mat-select placeholder="Sub-Raça" *ngIf="personagem.racas == null">
+                    <mat-option>
+                       Escolha a Raça
+                    </mat-option>
+                </mat-select>
+                <mat-select placeholder="Sub-Raça" *ngIf="personagem.racas != null" [(ngModel)]="personagem.subracas" name="subracas">
+                    <mat-option *ngFor="let subraca of personagem.racas.subRacas" [value]="subraca">
+                        {{ subraca.nome }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>
@@ -42,14 +56,18 @@
             <mat-form-field class="example-full-width">
                 <mat-select placeholder="Tendencia" [(ngModel)]="personagem.tendencia" name="tendencia">
                     <mat-option *ngFor="let tendencia of tendencias" [value]="tendencia.nome">
-                    {{ tendencia.nome }}
+                        {{ tendencia.nome }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="col-6 espaco-input">
              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Antecedente">
+                <mat-select placeholder="Antecedente" [(ngModel)]="personagem.antecedente" name="antecedente">
+                    <mat-option *ngFor="let antecedente of antecedentes" [value]="antecedente">
+                        {{ antecedente.nome }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>

@@ -47,6 +47,5 @@ export class PericiasComponent implements OnInit {
         pericia.treinada = !aux;
       }
     });
-  };
-  
+  };  
 }
