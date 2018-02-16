@@ -7,6 +7,7 @@
 </div>
 
 <div *ngIf="opem">
+  <h2>Iuri Ian</h2>
   <div class="pericias row center" *ngFor="let pericia of pericias">
       <div class="col-7 text-left" *ngIf="pericia.detalhe == null" (click)="exibirDetalhe = pericia.nome"> <p> {{pericia.nome}}</p> </div>
       <div class="col-7 text-left" *ngIf="exibirDetalhe != pericia.nome && pericia.detalhe != null" (click)="exibirDetalhe = pericia.nome"> <p><i class="fa fa-search-plus"></i> {{pericia.nome}}</p> </div>
